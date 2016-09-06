@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Coral Shop</title>
+  </head>
+  <body>
+     <h1>Logged in OK<h1>
+     <h2 id="msg"></h2>
+     <form id="logout" action="">
+      <input type="submit" value="Logout">
+     </form>
+     <script>
+       var currentUser = require('electron').remote.getGlobal('globalState').currentUser;
+       document.getElementById("msg").innerHTML = `Yo, ${currentUser.firstName} ${currentUser.lastName}!  Your email address is ${currentUser.nameID}`;
+     </script>
+  </body>
+  <script>
+    require('./loggedin.js')
+  </script>
+</html>
